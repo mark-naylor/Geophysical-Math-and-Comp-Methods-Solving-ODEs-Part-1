@@ -33,7 +33,11 @@ Scipy provides the function `scipy.integrate.odeint` which can
 
 `@instructions`
 In these instructions, you will explore the basic elements required to solve an ODE using `odeint`
-- Using the alias `integrate` inmport the package `script.integrate
+- Using the alias `integrate` import the package `script.integrate`. From this package you will be able to call odeint`
+- First, we need to define the function you want to integrate. This is called `func` in the example code. If you want to integrate $dy/dt$ then the function you define is `func(y,t)`.
+- `func` needs to return the derivative. Since we are integrating $dy/dt=t$, we just need to return the right hand side of this equation.
+- Next we need to define the range of times we want to integrate over. Use `linspace` to generate a array over the range 0 to 10 broken down into 100 steps.
+- Specify the initial value for $y_0 = 0.1$ using `y_initial`
 
 `@hint`
 
