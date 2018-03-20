@@ -5,6 +5,30 @@ description: >-
 
 
 ---
+## Classification of Differential Equations
+
+```yaml
+type: PureMultipleChoiceExercise
+key: 777148f638
+xp: 50
+skills: 2
+```
+
+Which of the below are 1st order ODEs?
+
+`@possible_answers`
+
+- $\frac{dy}{dx}=4 x^2$
+- $\frac{dy}{dx}=4 x^2 - 3 y$
+- $\frac{dy}{dx}=4 x^2 (1- 3 y)$
+- $\frac{d^2y}{dx^2}=4 x^2 (1- 3 y)$
+
+`@hint`
+
+`@feedbacks`
+
+---
+
 ## Solving an ODE using odeint
 
 ```yaml
@@ -109,7 +133,6 @@ test_object("times")
 test_object("y_initial")
 test_object("y")
 ```
-
 
 
 ---
