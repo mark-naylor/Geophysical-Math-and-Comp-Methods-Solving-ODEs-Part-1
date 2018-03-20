@@ -137,7 +137,7 @@ with the initial condition $y=0$ and $\dot{y}=0$ at $x=0$.
 `@script`
 
 ---
-## EXAMPLE: Damped Simple Harmonic Oscillator
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part 1_
 
 ```yaml
 type: FullSlide
@@ -148,24 +148,41 @@ key: '3273522130'
 
 - Solve the second order ODE:
 
-$$\ddot{y} +2\dot{y} +2y = \cos(2x)$$
+$$ \ddot{y} +2 \dot{y} +2y = \cos(2x) $$
 
 with the initial condition $y=0$ and $\dot{y}=0$ at $x=0$.
 
-- To solve this we define a new vector $ U = ( z_{1} , z_{2} ) $
+- To solve this we define a new vector 
+
+$ U = ( z_{1} , z_{2} ) $
 
 where $z_{1} =u$ and $z_{2} =\dot{y}$ 
 
 - And take its derivative:
   $$\dot{U} =  (\dot{z_{1}} , \dot{z_{2}} )$$
+
+
+`@script`
+
+---
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part 2
+
+```yaml
+type: FullSlide
+key: 4304b431b0
+```
+
+`@part1`
+
+$$\dot{U} =  (\dot{z_{1}} , \dot{z_{2}} )$$
   
  Let's consider the two terms in the bracket on the RHS of this equation,
  
- $$\dot{z_{1}}=\dot{y}=z_{2}$$
+ $$ \dot{ z_{1} } = \dot{ y } = z_{2} $$
  
  and
  
- $$\dot{z_{2}}=\ddot{y}=\cos(2x)-2\dot{y}-2y=\cos(2x)-2 z_{2} - 2 z_{1}$$
+ $$ \dot{ z_{2} } = \ddot{y} = \cos (2x) - 2 \dot{y} - 2y= \cos (2x) - 2 z_{2} - 2 z_{1}$$
 
 - We can also need to express the intial conditions in terms of $z_{1}$ and $z_{2}$.
 
@@ -173,11 +190,25 @@ $$y(x=0)=z_{1}(x=0)=0$$
 
 $$\dot{y}(x=0)=z_{2}(x=0)=0$$
 
+
+`@script`
+
+
+---
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part32
+
+```yaml
+type: FullSlide
+key: 26ac696de8
+```
+
+`@part1`
+
 - So, we now have a set of coupled ODEs and if we can integrate $\dot{U}$ over $x$, we will find $U$ as a function of position, $x$, which gives us $U[0]=y(x)$ and $U[1]=z=\dot{y}(x)$
 
-<div class="alert alert-block alert-info"> **IMPORTANT:** Convince yourself that this vector equation for $U$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
-</div>
+ **IMPORTANT:** Convince yourself that this vector equation for $U$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
 `@script`
+
 ---
 ## Let's practice!
 
