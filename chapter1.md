@@ -18,7 +18,7 @@ Which of the below are 1st order ODEs?
 
 1. $\frac{dy}{dx}=4 x^2$]
 2. $\frac{dy}{dx} - y =4 x^2$
-3. $\frac{dy}{dx}=4 x^2 (1- 3 y)$
+3. $\frac{dy}{dx}= -y \sqrt{x}$
 4. $\frac{d^2y}{dx^2}=4 x^2 (1- 3 y)$
 
 `@possible_answers`
