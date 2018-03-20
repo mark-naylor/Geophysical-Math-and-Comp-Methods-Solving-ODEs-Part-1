@@ -201,7 +201,7 @@ test_object("y")
 ```
 
 ---
-## Solving an other ODE using odeint
+## Solving a third ODE using odeint
 
 ```yaml
 type: NormalExercise
