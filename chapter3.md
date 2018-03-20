@@ -14,11 +14,11 @@ skills: 2
 
 Solving a $1^{st}$ Order ODE using Euler's Method where the derivative is equal to some arbitary function $f$.
 
-$\frac{dy}{dx}=f(y,x) $ 
+$ \frac{dy}{dx}=f(y,x) $ 
 
 At some node, $n$
 
-$  \frac{ y_{n+1}-y_{n} } {h} \approx f_{n} $ 
+$ \frac{ y_{n+1} - y_{n} }{h} \approx f_{n} $ 
 
 Which we can rearrange to find the next value $y_{n+1}$ based on the current value $y_{n}$ and the value of the function at the current position $f_{n}$.
 
@@ -28,13 +28,13 @@ Which we can rearrange to find the next value $y_{n+1}$ based on the current val
 `@instructions`
 - Solve $dy/dt=t$
 
-$y_{n+1}=y_{n}+f_{n}.h$
+$ y_{n+1} = y_{n} + f_{n} . h $
 
 Becomes,
 
-$y_{n+1}=y_{n}+t.h$
+$ y_{n+1} = y_{n} + t . h $
 
-- Over the domain $y\in(0,2)$ 
+- Over the domain $y \in(0,2)$ 
 
 - Using the initial condition $y(t=0)=0$ so `y[0]=0`
 
