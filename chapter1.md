@@ -36,7 +36,7 @@ In these instructions, you will explore the basic elements required to solve an 
 - First, we need to define the function you want to integrate. This is called `func` in the example code. If you want to integrate $dy/dt$ then the function you define is `func(y,t)`.
 - `func` needs to return the derivative. Since we are integrating $dy/dt=t$, we just need to return the right hand side of this equation.
 - Next we need to define the range of times we want to integrate over. Use `linspace` to generate a array over the range 0 to 10 broken down into 100 steps.
-- Specify the initial value for $y_0 = 0.1$ using `y_initial`
+- Specify the initial value for $ y_0 = 0.1 $ using `y_initial`
 
 `@hint`
 1. Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t
@@ -65,10 +65,10 @@ def func(___,___):
 
 # 2. Specify the arguments for the integration
 times  = np.linspace(___,___,___)  # Time range to integrate over
-y_init = ___                      # Initial value (the starting point for the integration)
+y_initial = ___                      # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
-y=integrate.odeint(func,y_init,times)
+y=integrate.odeint(func,y_initial,times)
 
 # 4. Plot the results
 plt.plot(times,y)
@@ -90,10 +90,10 @@ def func(y,t):
 
 # 2. Specify the arguments for the integration
 times  = np.linspace(0,10,100)  # Time range to integrate over
-y_init = 0.1                    # Initial value (the starting point for the integration)
+y_initial = 0.1                    # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
-y=integrate.odeint(func, y_init, times)
+y=integrate.odeint(func, y_initial, times)
 
 # 4. Plot the results
 plt.plot(times,y)
@@ -106,7 +106,7 @@ plt.show()
 ```{python}
 test_import("scipy.integrate")
 test_object("times")
-test_object("y_init")
+test_object("y_initial")
 test_object("y")
 ```
 
@@ -120,7 +120,7 @@ type: NormalExercise
 lang: python
 xp: 100
 skills: 2
-key: c4467d15f1
+key: aa63a7a041
 ```
 
 Use `odeint` to solve,
