@@ -64,7 +64,7 @@ def func(___,___):
   return (___)
 
 # 2. Specify the arguments for the integration
-time  = np.linspace(___,___,___)  # Time range to integrate over
+times  = np.linspace(___,___,___)  # Time range to integrate over
 y_init = np.array(___)          # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
