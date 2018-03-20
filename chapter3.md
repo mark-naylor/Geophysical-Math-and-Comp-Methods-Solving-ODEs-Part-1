@@ -14,7 +14,7 @@ skills: 2
 
 Solving a $1^{st}$ Order ODE using Euler's Method where the derivative is equal to some arbitary function $f$.
 
-$$\frac{dy}{dx}=f(y,x) $$ 
+$\frac{dy}{dx}=f(y,x) $ 
 
 At some node, $n$
 
