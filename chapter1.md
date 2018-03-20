@@ -50,13 +50,13 @@ import matplotlib.pyplot as plt # plotting module
 import numpy as np # numpy module
 
 # 1. Define the function you want to integrate
-def func(y,t):
+def func(___,___):
   """ Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t """
-  return (t)
+  return (___)
 
 # 2. Specify the arguments for the integration
-time  = np.linspace(0,10,100)  # Time range to integrate over
-yinit = np.array(0.1)          # Initial value (the starting point for the integration)
+time  = np.linspace(___,___,___)  # Time range to integrate over
+yinit = np.array(___)          # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
 y=integrate.odeint(func,yinit,time)
