@@ -4,6 +4,20 @@ description: >-
   In tis chapter, you will explore the basic tools in Python for solving odes.
 
 
+
+---
+## Introduction to solving ODEs in Python 
+
+```yaml
+type: VideoExercise
+key: 794a39b8fb
+lang: python
+xp: 50
+skills: 2
+video_link: player.vimeo.com/video/154783078
+```
+
+
 ---
 ## Classification of Differential Equations
 
