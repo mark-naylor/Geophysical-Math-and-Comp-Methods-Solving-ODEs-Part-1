@@ -18,21 +18,21 @@ $\frac{dy}{dx}=f(y,x) $
 
 At some node, $n$
 
-$$  \frac{ y_{n+1}-y_n } {h} \approx f_n $$ 
+$  \frac{ y_{n+1}-y_{n} } {h} \approx f_{n} $ 
 
-Which we can rearrange to find the next value $y_{n+1}$ based on the current value $y_n$ and the value of the function at the current position $f_n$.
+Which we can rearrange to find the next value $y_{n+1}$ based on the current value $y_{n}$ and the value of the function at the current position $f_{n}$.
 
 
 
 
 `@instructions`
-- Solve $$dy/dt=t$$
+- Solve $dy/dt=t$
 
-$$y_{n+1}=y_n+f_n.h$$
+$y_{n+1}=y_{n}+f_{n}.h$
 
 Becomes,
 
-$$y_{n+1}=y_n+t.h$$
+$y_{n+1}=y_{n}+t.h$
 
 - Over the domain $y\in(0,2)$ 
 
