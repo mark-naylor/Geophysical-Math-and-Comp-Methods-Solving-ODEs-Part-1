@@ -17,8 +17,7 @@ title: Senior Lecturer
 
 `@script`
 
-
-
+In this video we will explore how we can use the method we have just developed to solve coupled 1st order ODEs to second and third order ODEs.
 
 ---
 ## Higher order ODEs can be expressed as coupled equations
@@ -29,25 +28,11 @@ key: 16d7acc61e
 ```
 
 `@part1`
-Before we start with a new example, consider the coupled problem we solved above:
+Before we start with a new example, consider the coupled problem we solved previously:
 
   $$\frac{dy}{dt}=-x$$
   
   $$\frac{dx}{dt}=y$$
-
-`@part2`
-Substitute the second equation in the first to eliminate $y$:
- $$\frac{dy}{dt}= \frac{d^2x}{dt^2} =-x$$
-
-`@part3` 
- Similarly, if we eliminate $x$:
- $$\frac{d^2y}{dt^2} =-y$$
- 
-`@part4`
-So in actual fact, these coupled equations can equivalently expressed as 2nd order ODEs!
- 
-`@part5`
-In this Section, we go the other way where we start with a higher order ODE, reformulate as a set of coupled ODEs and then solve with `odeint`.
 
 `@script`
 
@@ -69,8 +54,11 @@ Before we start with a new example, consider the coupled problem we solved above
 Substitute the second equation in the first to eliminate $y$:
  $$\frac{dy}{dt}= \frac{d^2x}{dt^2} =-x$$
 
-
 `@script`
+
+If we subsititute the second equation into the first, we can eliminate y and end up with a second order ODE in x and t.
+
+
 ---
 ## Higher order ODEs can be expressed as coupled equations
 
@@ -94,29 +82,13 @@ Substitute the second equation in the first to eliminate $y$:
  Similarly, if we eliminate $x$:
  $$\frac{d^2y}{dt^2} =-y$$
  
-
-So in actual fact, these coupled equations can equivalently expressed as 2nd order ODEs!
- 
 `@script`
 
+Similarly, if we subsititute the first equation into the second, we can eliminate x and end up with a second order ODE in y and t.
 
----
-## EXAMPLE: Damped Simple Harmonic Oscillator
+So in actual fact, these coupled equations are equivalently expressed as 2nd order ODEs!
 
-```yaml
-type: FullSlide
-key: 805e454a12
-```
-
-`@part1`
-
-Solve the second order ODE:
-
-$$\ddot{y} +2\dot{y} +2y = \cos(2x)$$
-
-with boundary conditions $y \, (x=0)=0$ and $\dot{y} \, (x=0)=0$
-
-`@script`
+The methods we will be exploring will take a 2nd order ODE, convert it to a set of coupled ODEs and then solving these using odeint.
 
 ---
 ## EXAMPLE: Damped Simple Harmonic Oscillator
@@ -130,11 +102,17 @@ key: fd47dc0589
 
 Solve the second order ODE:
 
-$$\ddot{y} +2\dot{y} +2y = \cos(2x)$$
+$$\ddot{y} +2\dot{y} +2y = \cos(2t)$$
 
-with the initial condition $y=0$ and $\dot{y}=0$ at $x=0$.
+with the initial condition $y=0$ and $\dot{y}=0$ at $t=0$.
 
 `@script`
+
+The damped SHO is a standard system, commonly used in physics.
+
+In the exercises later, you will use this model to model the response of a seismometer.
+
+If we can reformulate the problem as a set of coupled 1st order ODEs, we can use what we have learned in previous exercises so solve this problem!
 
 ---
 ## EXAMPLE: Damped Simple Harmonic Oscillator (Part 1)
@@ -148,16 +126,14 @@ key: '3273522130'
 
 - Solve the second order ODE:
 
-$$ \ddot{y} +2 \dot{y} +2y = \cos(2x) $$
+$$ \ddot{y} +2 \dot{y} +2y = \cos(2t) $$
 
-with the initial condition $y=0$ and $\dot{y}=0$ at $x=0$.
+with the initial condition $y=0$ and $\dot{y}=0$ at $t=0$.
 
-- To solve this we need to reformulate the problem as a set of coupled 1st order ODEs.
+- Lets start by defining a new vector $ U = ( z0 , z1 ) $ where $z0 =y$ and $z1 =\dot{y}$ 
 
-Lets start by defining a new vector $ U = ( z1 , z2 ) $ where $z1 =u$ and $z2 =\dot{y}$ 
-
-- And take its derivative:
-  $$\dot{U} =  (\dot{z1} , \dot{z2} )$$
+- Next take its derivative,
+  $$\dot{U} =  (\dot{z0} , \dot{z1} )$$
 
 `@script`
 
@@ -170,42 +146,68 @@ key: 4304b431b0
 ```
 
 `@part1`
- Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z1} , \dot{z2} )$,
+ Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z0} , \dot{z1} )$,
 
-- Since $z1 = y$, 
- $$ \dot{ z1 } = \dot{ y } = z2 $$
+- Since $z0 = y$, 
+ $$ \dot{ z0 } = \dot{ y } = z1 $$
  
-- and since $z2=\dot{y}$,
- $$ \dot{ z2 } = \ddot{y} = \cos (2x) - 2 \dot{y} - 2y= \cos (2x) - 2 z2 - 2 z1$$
-
-- If you look carefully, we now have two coupled 1st order equations:
-$$ \dot{ z1 } = z2 $$
-$$ \dot{ z2 } = \cos (2x) - 2 z2 - 2 z1$$
+- and since $z1=\dot{y}$,
+ $$ \dot{ z1 } = \ddot{y} = \cos (2t) - 2 \dot{y} - 2y= \cos (2t) - 2 z1 - 2 z0$$
 
 `@script`
 
-
 ---
-## EXAMPLE: Damped Simple Harmonic Oscillator (Part 3)
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part 2)
 
 ```yaml
 type: FullSlide
-key: 26ac696de8
+key: '20537484e2'
 ```
 
 `@part1`
-- We can also need to express the intial conditions in terms of $z1$ and $z2$.
+Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z0} , \dot{z1} )$,
 
-$$y(x=0)=z1(x=0)=0$$
+- Since $z0 = y$, 
+ $$ \dot{ z0 } = \dot{ y } = z1 $$
+ 
+- and since $z1=\dot{y}$,
+ $$ \dot{ z1 } = \ddot{y} = \cos (2t) - 2 \dot{y} - 2y= \cos (2t) - 2 z1 - 2 z0$$
 
-$$\dot{y}(x=0)=z2(x=0)=0$$
-
-- So, we now have a set of coupled ODEs and if we can integrate $\dot{U}$ over $x$, we will find $U$ as a function of position, $x$, which gives us $U[0]=y(x)$ and $U[1]=z=\dot{y}(x)$
-
+- If you look carefully, we now have two coupled 1st order equations:
+$$ \dot{ z0 } = z1 $$
+$$ \dot{ z1 } = \cos (2t) - 2 z1 - 2 z0$$
 
 `@script`
 
- **IMPORTANT:** Convince yourself that this vector equation for $U$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
+---
+## Defining the function for the coupled derivatives
+
+```yaml
+type: TwoRows
+key: 5c5f49251c
+```
+
+`@part1`
+
+- Coupled ODE example: $dy/dt=-x$ and  $dx/dt=y$
+```
+def derivative(z,t):
+  """ Derivative (dz[0]/dt,dz[1]/dt)=(z[1],\cos (2t) - 2 z1 - 2 z0)"""
+  return ( z[1], -z[0] )
+```
+
+`@part2`
+- 2nd order Simple Harmonic Oscillator
+$$ \dot{ z }[0] = z[1] $$
+$$ \dot{ z }[1] = \cos (2t) - 2 z[1] - 2 z[0]$$
+
+```
+def dU_dt(z,t):
+  """ Derivative (dz[0]/dt,dz[1]/dt)=(z[1],\cos (2t) - 2 z[1] - 2 z[0])"""
+  return ( z[1], np.cos(2*t)-2*z[1]-2*z[0] )
+```
+
+`@script`
 
 ---
 ## Let's practice!
