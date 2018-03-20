@@ -200,3 +200,77 @@ test_object("y0")
 test_object("y")
 ```
 
+---
+## Solving an other ODE using odeint
+
+```yaml
+type: NormalExercise
+lang: python
+xp: 100
+skills: 2
+key: '8032508806'
+```
+
+Use `odeint` to solve,
+$$\frac{dy}{dx}+y=x$$
+
+with the initial value of $y(x=0)=1$ over the range $x=0$ to 5 divided into 100 integration points.
+
+`@instructions`
+Use what you have learnt in the previous exercises to integrate this derivative
+
+`@hint`
+You can rearrange the equation you want to integrate to:
+
+$$\frac{dy}{dx}=x-y$$
+
+The function you define just needs to return the right hand side of this equation
+
+
+
+`@sample_code`
+```{python}
+import scipy.integrate as integrate # get the ODE module
+import matplotlib.pyplot as plt # plotting module
+import numpy as np # numpy module
+
+def ___ :
+    return ___
+
+x = ___
+y0 = ___
+y = ___
+
+plt.plot(x, y)
+plt.xlabel("x")
+plt.ylabel("y")
+
+plt.show()
+
+```
+`@solution`
+```{python}
+import scipy.integrate as integrate # get the ODE module
+import matplotlib.pyplot as plt # plotting module
+import numpy as np # numpy module
+
+def dy_dx(y, x):
+    return x - y
+
+x = np.linspace(0,5,100)
+y0 = 1.0
+y = integrate.odeint(dy_dx, y0, x)
+
+plt.plot(x, y)
+plt.xlabel("x")
+plt.ylabel("y")
+
+plt.show()
+
+```
+`@sct`
+```{python}
+test_object("x")
+test_object("y0")
+test_object("y")
+```
