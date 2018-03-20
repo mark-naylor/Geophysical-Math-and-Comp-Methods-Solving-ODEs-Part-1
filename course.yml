@@ -1,4 +1,4 @@
-title: Numerical solutions to ODEs - Part 1
+title: Numerical solutions to ODEs - Part 1 - Initial Value Problems
 description: A description of the course.
 programming_language: python
 from: python-base-prod:21
