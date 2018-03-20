@@ -92,7 +92,26 @@ key: 979e3f9b42
 
 `@part1`
 
+How can we solve $\frac{dy}{dt}=t$ using `odeint`?
+
 `@script`
+# 1. Define the function you want to integrate
+def func(y,t):
+  """ Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t """
+  return (t)
+
+# 2. Specify the arguments for the integration
+time  = np.linspace(0,10,100)  # Time range to integrate over
+yinit = np.array(0.1)          # Initial value (the starting point for the integration)
+
+# 3. Perform the integration
+y=integrate.odeint(func,yinit,time)
+
+# 4. Plot the results
+plt.plot(time,y)
+plt.xlabel('time')    ;    plt.ylabel('y')
+plt.title(r'Solution for $\frac{dy}{dt}=t$')
+
 
 ---
 ## Let's practice!
