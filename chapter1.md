@@ -65,7 +65,7 @@ def func(___,___):
 
 # 2. Specify the arguments for the integration
 time  = np.linspace(___,___,___)  # Time range to integrate over
-y_init = np.array(___)          # Initial value (the starting point for the integration)
+y_init = ___                      # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
 y=integrate.odeint(func,y_init,times)
@@ -90,7 +90,7 @@ def func(y,t):
 
 # 2. Specify the arguments for the integration
 times  = np.linspace(0,10,100)  # Time range to integrate over
-y_init = np.array(0.1)          # Initial value (the starting point for the integration)
+y_init = 0.1                    # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
 y=integrate.odeint(func, y_init, times)
@@ -112,4 +112,91 @@ test_object("y")
 
 
 
+---
+## Solving an other ODE using odeint
+
+```yaml
+type: NormalExercise
+lang: python
+xp: 100
+skills: 2
+key: 84cab99403
+```
+
+Use `odeint` to solve,
+
+$\frac{dy}{dt}= -y\sqrt(t)$ with $y(0)=1$ for $t\in(0,5)$
+
+`@instructions`
+- Using the alias `integrate` import the package `script.integrate`.
+- Import `numpy` and the `matplotlib` plotting package using their standard aliases
+- Define the function you wish to integrate and call it `dy_dt`
+- Divide the time range into 100 points using `linspace`
+- Specify the initial value for $y_0 =1$ using `y0`
+
+`@hint`
+1. Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t
+``` 
+def func(y,t):
+  return (t)
+```
+
+2. 
+```times  = np.linspace(0,10,100)  # Time range to integrate over```
+
+3. 
+```y_init = np.array(0.1)          # Initial value (the starting point for the integration)```
+
+
+`@sample_code`
+```{python}
+import ___ as ___ # get the ODE module
+import matplotlib.___ as ___ # plotting module
+import numpy as ___ # numpy module
+
+
+def dy_dt(___, ___):
+    return ___
+
+times = np.linspace(___,___,___)
+y0 = ___
+y = ___.___(___, ___, ___)
+
+plt.plot(times, y)
+plt.xlabel("time")
+plt.ylabel("y")
+
+plt.show()
+
+```
+`@solution`
+```{python}
+import scipy.integrate as integrate # get the ODE module
+import matplotlib.pyplot as plt # plotting module
+import numpy as np # numpy module
+
+
+def dy_dt(y, t):
+    return - y * np.sqrt(t)
+
+times = np.linspace(0,5,100)
+y0 = 1.0
+y = integrate.odeint(dy_dt, y0, times)
+
+plt.plot(times, y)
+plt.xlabel("time")
+plt.ylabel("y")
+
+plt.show()
+
+```
+`@sct`
+```{python}
+test_import("scipy.integrate")
+test_import("matplotlib.pyplot")
+test_import("numpy")
+test_object("times")
+test_object("y0")
+test_object("y")
+```
 
