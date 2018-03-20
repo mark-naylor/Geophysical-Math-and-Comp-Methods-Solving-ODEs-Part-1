@@ -96,5 +96,5 @@ plt.title(r'Solution of $\frac{dy}{dt}=-1, \frac{dx}{dt}=y$' "\n"
 
 `@sct`
 ```{python}
-
+test_object("z")
 ```
