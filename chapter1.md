@@ -230,9 +230,9 @@ The function you define just needs to return the right hand side of this equatio
 
 `@sample_code`
 ```{python}
-import scipy.integrate as integrate # get the ODE module
-import matplotlib.pyplot as plt # plotting module
-import numpy as np # numpy module
+import ___ as ___ # get the ODE module
+import ___ as ___ # plotting module
+import ___ as ___ # numpy module
 
 def ___ :
     return ___
