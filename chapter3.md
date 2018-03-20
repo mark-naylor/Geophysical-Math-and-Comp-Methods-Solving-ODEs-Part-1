@@ -72,7 +72,6 @@ plt.xlabel("Time")         ;       plt.ylabel("y")
 plt.legend(loc="upper left")
 
 
-
 ```
 
 `@solution`
@@ -101,6 +100,92 @@ plt.plot(t, y, "--+", label="Euler's Solution")
 plt.xlabel("Time")         ;       plt.ylabel("y")
 plt.legend(loc="upper left")
 
+
+
+```
+
+`@sct`
+```{python}
+
+```
+
+---
+## <<<New Exercise>>>
+
+```yaml
+type: NormalExercise
+key: db9be18d31
+lang: python
+xp: 100
+skills: 2
+```
+
+Use Euler's method to solve $\frac{dy}{dt}= -y\sqrt(t)$ 
+
+`@instructions`
+- Use the initial condition $y(0)=1$
+- Integrate over  $t\in(0,5)$ 
+- Use a timestep of 0.25
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+h=0.25 # Stepsize
+
+# Create output arrays
+t = np.arange(0,5,h)    # Array of output times from 0 to 2 in 0.1 increments
+y = np.empty_like(t)    # An empty array to store the y in
+
+N = len(t)              # The length of t tells us how many interations are needed
+
+y[0] = 1                # Set the first value in y to be the initial condition y(t=0)=0
+
+# Numerially iterate over time using the forward Euler discretisation
+for n in range(0,N-1):
+    y[n+1] = y[n] + h * y[n] * np.sqrt( t[n] )
+
+plt.plot(t, y, "--+", label="Euler's Solution")
+plt.xlabel("Time")         ;       plt.ylabel("y")
+plt.legend(loc="upper left")
+
+
+```
+
+`@solution`
+```{python}
+#############################################################
+# Compute y iteratively using Finite Difference Forward Euler
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+h=0.25 # Stepsize
+
+# Create output arrays
+t = np.arange(0,5,h)    # Array of output times from 0 to 2 in 0.1 increments
+y = np.empty_like(t)    # An empty array to store the y in
+
+N = len(t)              # The length of t tells us how many interations are needed
+
+y[0] = 1                # Set the first value in y to be the initial condition y(t=0)=0
+
+# Numerially iterate over time using the forward Euler discretisation
+for n in range(0,N-1):
+    y[n+1] = y[n] + h * y[n] * np.sqrt( t[n] )
+
+plt.plot(t, y, "--+", label="Euler's Solution")
+plt.xlabel("Time")         ;       plt.ylabel("y")
+plt.legend(loc="upper left")
 
 
 ```
