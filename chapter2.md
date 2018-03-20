@@ -3,6 +3,20 @@ title       : Numerical solution to Coupled ODEs
 description : Insert the chapter description here
 
 
+
+---
+## Solving coupled ODEs
+
+```yaml
+type: VideoExercise
+key: 1bb3ce5d30
+lang: python
+xp: 50
+skills: 2
+video_link: player.vimeo.com/video/154783078
+```
+
+
 ---
 ## Solving a coupled ODE
 
@@ -219,6 +233,22 @@ plt.ylabel("Rabbits")
 ```
 
 
+
+
+---
+## Solving higher order ODEs
+
+```yaml
+type: VideoExercise
+key: ccb11d82f3
+lang: python
+xp: 50
+skills: 2
+video_link: player.vimeo.com/video/154783078
+```
+
+`@projector_key`
+ded5364ad06fa7eb5f710b0f85081a93
 
 ---
 ## Numercial solution to higher order ODEs
