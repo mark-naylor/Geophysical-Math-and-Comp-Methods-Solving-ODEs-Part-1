@@ -64,7 +64,7 @@ def func(___,___):
   return (___)
 
 # 2. Specify the arguments for the integration
-time  = np.linspace(___,___,___)  # Time range to integrate over
+times  = np.linspace(___,___,___)  # Time range to integrate over
 y_init = ___                      # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
@@ -120,7 +120,7 @@ type: NormalExercise
 lang: python
 xp: 100
 skills: 2
-key: 84cab99403
+key: c4467d15f1
 ```
 
 Use `odeint` to solve,
