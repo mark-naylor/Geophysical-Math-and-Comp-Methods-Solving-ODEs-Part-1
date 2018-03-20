@@ -12,8 +12,8 @@ key: 72cef53ea8
 ```
 
 `@lower_third`
-name: Firstname Lastname
-title: Instructor
+name: Mark Naylor
+title: Senior Lecturer
 
 `@script`
 
