@@ -137,7 +137,7 @@ with the initial condition $y=0$ and $\dot{y}=0$ at $x=0$.
 `@script`
 
 ---
-## EXAMPLE: Damped Simple Harmonic Oscillator (Part 1_
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part 1)
 
 ```yaml
 type: FullSlide
@@ -152,20 +152,17 @@ $$ \ddot{y} +2 \dot{y} +2y = \cos(2x) $$
 
 with the initial condition $y=0$ and $\dot{y}=0$ at $x=0$.
 
-- To solve this we define a new vector 
+- To solve this we need to reformulate the problem as a set of coupled 1st order ODEs.
 
-$ U = ( z_{1} , z_{2} ) $
-
-where $z_{1} =u$ and $z_{2} =\dot{y}$ 
+Lets start by defining a new vector $ U = ( z1 , z2 ) $ where $z1 =u$ and $z2 =\dot{y}$ 
 
 - And take its derivative:
-  $$\dot{U} =  (\dot{z_{1}} , \dot{z_{2}} )$$
-
+  $$\dot{U} =  (\dot{z1} , \dot{z2} )$$
 
 `@script`
 
 ---
-## EXAMPLE: Damped Simple Harmonic Oscillator (Part 2
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part 2)
 
 ```yaml
 type: FullSlide
@@ -173,29 +170,23 @@ key: 4304b431b0
 ```
 
 `@part1`
+ Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z1} , \dot{z2} )$,
 
-$$\dot{U} =  (\dot{z_{1}} , \dot{z_{2}} )$$
-  
- Let's consider the two terms in the bracket on the RHS of this equation,
+- Since $z1 = y$, 
+ $$ \dot{ z1 } = \dot{ y } = z2 $$
  
- $$ \dot{ z_{1} } = \dot{ y } = z_{2} $$
- 
- and
- 
- $$ \dot{ z_{2} } = \ddot{y} = \cos (2x) - 2 \dot{y} - 2y= \cos (2x) - 2 z_{2} - 2 z_{1}$$
+- and since $z2=\dot{y}$,
+ $$ \dot{ z2 } = \ddot{y} = \cos (2x) - 2 \dot{y} - 2y= \cos (2x) - 2 z2 - 2 z1$$
 
-- We can also need to express the intial conditions in terms of $z_{1}$ and $z_{2}$.
-
-$$y(x=0)=z_{1}(x=0)=0$$
-
-$$\dot{y}(x=0)=z_{2}(x=0)=0$$
-
+- If you look carefully, we now have two coupled 1st order equations:
+$$ \dot{ z1 } = z2 $$
+$$ \dot{ z2 } = \cos (2x) - 2 z2 - 2 z1$$
 
 `@script`
 
 
 ---
-## EXAMPLE: Damped Simple Harmonic Oscillator (Part32
+## EXAMPLE: Damped Simple Harmonic Oscillator (Part 3)
 
 ```yaml
 type: FullSlide
@@ -203,11 +194,18 @@ key: 26ac696de8
 ```
 
 `@part1`
+- We can also need to express the intial conditions in terms of $z1$ and $z2$.
+
+$$y(x=0)=z1(x=0)=0$$
+
+$$\dot{y}(x=0)=z2(x=0)=0$$
 
 - So, we now have a set of coupled ODEs and if we can integrate $\dot{U}$ over $x$, we will find $U$ as a function of position, $x$, which gives us $U[0]=y(x)$ and $U[1]=z=\dot{y}(x)$
 
- **IMPORTANT:** Convince yourself that this vector equation for $U$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
+
 `@script`
+
+ **IMPORTANT:** Convince yourself that this vector equation for $U$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
 
 ---
 ## Let's practice!
