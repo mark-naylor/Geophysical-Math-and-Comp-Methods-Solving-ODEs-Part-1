@@ -55,6 +55,19 @@ key: 5e2281805c
 `@script`
 
 
+
+---
+## Initial Value vs Boundary Value Problems
+
+```yaml
+type: FullSlide
+key: f07780793a
+```
+
+`@part1`
+
+`@script`
+
 ---
 ## Numerical solution of 1st order ODEs using `odeint`
 
