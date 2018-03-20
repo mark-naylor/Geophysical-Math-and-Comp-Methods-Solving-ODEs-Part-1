@@ -39,7 +39,17 @@ In these instructions, you will explore the basic elements required to solve an 
 - Specify the initial value for $y_0 = 0.1$ using `y_initial`
 
 `@hint`
+1. Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t
+``` 
+def func(y,t):
+  return (t)
+```
 
+2. 
+```times  = np.linspace(0,10,100)  # Time range to integrate over```
+
+3. 
+```y_init = np.array(0.1)          # Initial value (the starting point for the integration)```
 
 
 `@sample_code`
