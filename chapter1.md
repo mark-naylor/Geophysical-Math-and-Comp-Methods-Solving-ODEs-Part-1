@@ -15,12 +15,25 @@ skills: 2
 key: 988b99648b
 ```
 
+In this exercise you will use the `scipy.integrate` module to numerically integrate a 1st order ODE.
 
+## `scipy.integrate.odeint`
+
+Scipy provides the function `scipy.integrate.odeint` which can
+  use a variety of solvers to solve 1st order ODEs.
+
+  `odeint` is run as
+  `y=scipy.integrate.odeint(fn,yo,t)` where:
+
+- `fn`: is the function you want to solve corresponding to $dy/dt=$ `fn(y,t)`. 
+- `fn`: should be a function of $y$ and $t$ i.e. `fn(y,t)`.
+- `t`: specifies the times you want solution values for.
+- `y0`: are the initial conditions.
+- `args`: You can provide other arguments for `odeint` including additional arguments for the function to be solved. 
 
 `@instructions`
-Solve $\frac{dy}{dt}=t$ using `odeint`
-
--
+In these instructions, you will explore the basic elements required to solve an ODE using `odeint`
+- Using the alias `integrate` inmport the package `script.integrate
 
 `@hint`
 
