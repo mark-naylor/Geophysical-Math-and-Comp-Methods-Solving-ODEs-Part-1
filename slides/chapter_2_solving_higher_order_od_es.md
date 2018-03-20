@@ -35,15 +35,39 @@ Before we start with a new example, consider the coupled problem we solved above
   
   $$\frac{dx}{dt}=y$$
 
+`@part2`
 Substitute the second equation in the first to eliminate $y$:
  $$\frac{dy}{dt}= \frac{d^2x}{dt^2} =-x$$
- 
+
+`@part3` 
  Similarly, if we eliminate $x$:
  $$\frac{d^2y}{dt^2} =-y$$
  
+`@part4`
 So in actual fact, these coupled equations can equivalently expressed as 2nd order ODEs!
  
+`@part5`
 In this Section, we go the other way where we start with a higher order ODE, reformulate as a set of coupled ODEs and then solve with `odeint`.
+
+`@script`
+
+
+
+---
+## Example- Damped Simple Harmonic Oscillator
+
+```yaml
+type: FullSlide
+key: 805e454a12
+```
+
+`@part1`
+
+Solve the second order ODE:
+
+$$\ddot{y} +2\dot{y} +2y = \cos(2x)$$
+
+with boundary conditions $y \, (x=0)=0$ and $\dot{y} \, (x=0)=0$
 
 `@script`
 
