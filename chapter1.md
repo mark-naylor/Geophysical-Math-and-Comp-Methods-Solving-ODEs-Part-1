@@ -5,7 +5,7 @@ description: >-
 
 
 ---
-## Sample exercise
+## Solving an ODE using odeint
 
 ```yaml
 type: NormalExercise
@@ -39,17 +39,7 @@ In these instructions, you will explore the basic elements required to solve an 
 - Specify the initial value for $y_0 = 0.1$ using `y_initial`
 
 `@hint`
-1. Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t
-``` 
-def func(y,t):
-  return (t)
-```
 
-2. 
-```times  = np.linspace(0,10,100)  # Time range to integrate over```
-
-3. 
-```y_init = np.array(0.1)          # Initial value (the starting point for the integration)```
 
 
 `@sample_code`
@@ -64,7 +54,7 @@ def func(___,___):
   return (___)
 
 # 2. Specify the arguments for the integration
-times  = np.linspace(___,___,___)  # Time range to integrate over
+time  = np.linspace(___,___,___)  # Time range to integrate over
 y_init = np.array(___)          # Initial value (the starting point for the integration)
 
 # 3. Perform the integration
