@@ -17,7 +17,7 @@ skills: 2
 Which of the below are 1st order ODEs?
 
 1. $\frac{dy}{dx}=4 x^2$]
-2. $\frac{dy}{dx}=4 x^2 - 3 y$
+2. $\frac{dy}{dx} - y =4 x^2$
 3. $\frac{dy}{dx}=4 x^2 (1- 3 y)$
 4. $\frac{d^2y}{dx^2}=4 x^2 (1- 3 y)$
 
@@ -25,12 +25,20 @@ Which of the below are 1st order ODEs?
 
 - Equation 1
 - Equations 1 and 2
+- Equations 1 and 3
 - [Equations 1, 2 and 3]
 - All of them
 
 `@hint`
 
 `@feedbacks`
+
+
+- There are more
+- There are more
+- There are more
+- Yes - equations 1, 2 and 3 are all first order ODEs
+- Equation 4 is a second order ODE
 
 ---
 
