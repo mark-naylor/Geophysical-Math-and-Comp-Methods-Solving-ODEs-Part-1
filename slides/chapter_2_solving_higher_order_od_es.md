@@ -20,6 +20,40 @@ title: Senior Lecturer
 In this video we will explore how we can use the method we have just developed to solve coupled 1st order ODEs to second and third order ODEs.
 
 ---
+## Boundary Conditions for Higher Order ODEs
+
+```yaml
+type: TwoRows
+key: f2eb832c17
+```
+
+`@part1`
+### Initial Value Problems
+
+- Where all the boundary conditions are specified at the same time or loaction
+- If we can construct coupled equations to describe the higher order ODE, we can just start at the known location and integrate away from that point
+- This can be done directly using `odeint`
+
+`@part2`
+### Boundary Value Problems
+
+- Where the boundary conditions are specified at different times or loactions
+- These problems are harder to solve as we need to match BCs at different points
+- A classic example is the trajectory of a projectile where the first boundary condition is where it is launched from, and the second is where we want it to land. The problem is to determine the launch angle that will achieve this
+
+`@script`
+
+For a first order ODE we only needed one BC, and we integrated away from that point.
+
+To solve a high order ODEs we need as many BCs as the order of the ODE. So if we have a 2nd order ODE, we need two BCs. Third order, three ...
+
+There is also another consideration that defines the type of problem we will be solving - that is where the boundary conditions are specified.
+
+If all of the BCs are specified at the same time or location, depending upon the problem, we will be able to start at that point in space or time and numerically integrate away from it. These are called initial value problems and are what we will consider in the rest of this Chapter. 
+
+Boundary Value problems are where the BCs are specified at different locations or times and are less trivial to solve. We will consider this type of problem next week.
+
+---
 ## Higher order ODEs can be expressed as coupled equations
 
 ```yaml

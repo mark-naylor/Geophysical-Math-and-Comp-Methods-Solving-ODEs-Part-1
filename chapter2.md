@@ -16,6 +16,8 @@ skills: 2
 video_link: player.vimeo.com/video/154783078
 ```
 
+`@projector_key`
+580a94edd2ef9105f394e28f32ba16cc
 
 ---
 ## Solving a coupled ODE
@@ -251,7 +253,7 @@ video_link: player.vimeo.com/video/154783078
 ded5364ad06fa7eb5f710b0f85081a93
 
 ---
-## Numercial solution to higher order ODEs
+## Modelling the response of a seismometer
 
 ```yaml
 type: NormalExercise
@@ -264,53 +266,9 @@ skills: 2
 
 `@instructions`
 
-Before we start with a new example, consider the coupled problem we solved above:
+Let's use what you have just learned to explore the response of a seismometer to high and low frequency shaking.
 
-  $$\frac{dy}{dt}=-x$$
-  
-  $$\frac{dx}{dt}=y$$
-
-Substitute the second equation in the first to eliminate $y$:
- $$\frac{dy}{dt}= \frac{d^2x}{dt^2} =-x$$
- 
- Similarly, if we eliminate $x$:
- $$\frac{d^2y}{dt^2} =-y$$
- 
-So in actual fact, these coupled equations can equivalently expressed as 2nd order ODEs!
- 
-In this Section, we go the other way where we start with a higher order ODE, reformulate as a set of coupled ODEs and then solve with `odeint`.
-
-### Solve the second order ODE:
-
-$$\ddot{y} +2\dot{y} +2y = \cos(2x)$$
-
-with boundary conditions $y \, (x=0)=0$ and $\dot{y} \, (x=0)=0$
-
-- We can turn this into two coupled first-order equations by defining a new dependent variable:
-
-Let
-$$z = \frac{dy}{dx} = \dot{y}$$ 
-therefore 
-$$\dot{z} +2z +2y = \cos(2x)$$
-
-$$\dot{z} = \cos(2x)- 2z - 2y$$
-
-<div class="alert alert-block alert-info"> **IMPORTANT:** Convince yourself that this vector equation for $\mathbf{U}$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
-</div>
-
-Let 
-$$\mathbf{U} = \begin{pmatrix} y \\ z \end{pmatrix}$$
-
-Therefore, the derivative is:
-  $$\mathbf{\dot{U}} =  \begin{pmatrix}\dot{y} \\ \dot{z}  \end{pmatrix} =  \begin{pmatrix}z \\ \cos(2x)- 2z - 2y \end{pmatrix} =  \begin{pmatrix} U[1] \\ \cos(2x)- 2 U[0] - 2 U[1] \end{pmatrix}$$
-
-
-with the two initial boundary conditions $$y\, (x=0)=0$$ and $$\dot{y}\, (x=0)=z\, (x=0)=0$$ 
-
-So, we now have a set of coupled ODEs and if we can integrate $\mathbf{\dot{U}}$ over $x$, we will find $\mathbf{U}$ as a function of position, $x$, which gives us $U[0]=y(x)$ and $U[1]=z=\dot{y}(x)$
-
-<div class="alert alert-block alert-info"> **IMPORTANT:** Convince yourself that this vector equation for $\mathbf{U}$ is equivalent to the 2 coupled equations for $z,y$ and $t$ above.
-</div>
+From Physics of the Earth, you should hopefully remember that a seismometer can be modelled as a damped driven simple harmonic oscillator.
 
 `@hint`
 

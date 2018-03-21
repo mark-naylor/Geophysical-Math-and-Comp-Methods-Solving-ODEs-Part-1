@@ -22,7 +22,7 @@ title: Instructor
 
 
 ---
-## Why consider numerical solutions to ODEs
+## Why consider numerical solutions to differential equations?
 
 ```yaml
 type: FullSlide
@@ -31,11 +31,11 @@ key: 1fe832c29c
 
 `@part1`
 
-Many problems in Geosciences can be written in the form of
-differential equations. 
+- Many problems in Geosciences can be written in the form of differential equations. 
 
-This session aims to introduce you to basic ideas about numerically
-solving Ordinary Differential Equations (ODEs) and implementing these in Python.
+- Broadly, this is because for things to flow and change, we need gradients to exist in the environment to drive, control and mediate that change. Differential equations are the fundemental vocabulary of such gradients and changes.
+
+- This first chapter, we introduce you to basic ideas about numerically solving the simplest differential equations, 1st order Ordinary Differential Equations (ODEs) and using `scipy.integrate.odeint` in Python.
 
 
 `@script`
@@ -57,16 +57,28 @@ key: 5e2281805c
 
 
 ---
-## Initial Value vs Boundary Value Problems
+## What information is needed to solve a 1st order ODE?
 
 ```yaml
-type: FullSlide
-key: f07780793a
+type: TwoRows
+key: f2eb832c17
 ```
 
 `@part1`
+We need four elements to solve an ode. The first three below are the same information you need to analytically solve an ODE. 
+
+1. The funtion we want to integrate:
+
+2. Boundary Conditions: 
+
+3. Domain to integrate over:
+
+4. A numerical ODE solver: `scipy.integrate.odeint`
+
+
 
 `@script`
+Instead of analyitically solving the equation, we need a numerical ODE solver.
 
 ---
 ## Numerical solution of 1st order ODEs using `odeint`
@@ -109,19 +121,21 @@ How can we solve $\frac{dy}{dt}=t$ using `odeint`?
 
 ``` 
 # 1. Define the function you want to integrate
-def func(y,t):
-  """ Simple function to illustrate use of scipy.integrate.ode for the problem dy/dt=t """
+def dy_dt(y,t):
   return (t)
 
-# 2. Specify the arguments for the integration
-time  = np.linspace(0,10,100)  # Time range to integrate over
-yinit = np.array(0.1)          # Initial value (the starting point for the integration)
+# 2. Boundary condition
+yinit = 0.1
 
-# 3. Perform the integration
-y=integrate.odeint(func,yinit,time)
+# 3. Domain to integrate over
+time  = np.linspace(0,10,100)
 
-# 4. Plot the results
+# 4. Perform the integration
+y=integrate.odeint(dy_dt, yinit, time)
+
+# 5. Plot the results
 plt.plot(time,y)
+
 plt.xlabel('time')    ;    plt.ylabel('y')
 plt.title(r'Solution for $\frac{dy}{dt}=t$')
 ```
