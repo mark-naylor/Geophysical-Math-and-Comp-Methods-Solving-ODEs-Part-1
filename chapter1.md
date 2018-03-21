@@ -1,7 +1,7 @@
 ---
 title: Introduction to numerical solutions to ODEs
 description: >-
-  In tis chapter, you will explore the basic tools in Python for solving odes.
+  In this chapter, you will explore the basic tools in Python for solving odes.
 
 
 
@@ -14,7 +14,7 @@ key: 794a39b8fb
 lang: python
 xp: 50
 skills: 2
-video_link: player.vimeo.com/video/154783078
+video_link: player.vimeo.com/video/78834424
 ```
 
 `@projector_key`

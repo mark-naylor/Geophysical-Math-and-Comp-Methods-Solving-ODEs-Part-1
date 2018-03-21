@@ -2,6 +2,7 @@
 title: Introduction to solving ODEs in Python
 key: a951026bf01573a11af7f9dbc6cfc369
 
+video_link: //player.vimeo.com/video/78834424
 
 ---
 ## Introduction to solving ODEs in Python
