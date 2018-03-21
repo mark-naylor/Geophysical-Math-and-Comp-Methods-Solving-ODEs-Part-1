@@ -1,5 +1,5 @@
 ---
-title: Introduction to numerical solutions to ODEs
+title: Introduction to numerical solutions to 1st order ODEs
 description: >-
   In this chapter, you will explore the basic tools in Python for solving odes.
 

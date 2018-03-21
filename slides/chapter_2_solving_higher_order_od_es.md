@@ -70,6 +70,8 @@ Before we start with a new example, consider the coupled problem we solved previ
 
 `@script`
 
+Lets's reconsider the coupled ODEs from the last video. The derivative of y wrt t is -x and the derivatibe of x wrt t is y.
+
 ---
 ## Higher order ODEs can be expressed as coupled equations
 
@@ -86,6 +88,7 @@ Before we start with a new example, consider the coupled problem we solved above
   $$\frac{dx}{dt}=y$$
 
 Substitute the second equation in the first to eliminate $y$:
+ 
  $$\frac{dy}{dt}= \frac{d^2x}{dt^2} =-x$$
 
 `@script`
@@ -110,10 +113,11 @@ Before we start with a new example, consider the coupled problem we solved above
 
 
 Substitute the second equation in the first to eliminate $y$:
+
  $$\frac{dy}{dt}= \frac{d^2x}{dt^2} =-x$$
 
-
  Similarly, if we eliminate $x$:
+
  $$\frac{d^2y}{dt^2} =-y$$
  
 `@script`
@@ -142,7 +146,9 @@ with the initial condition $y=0$ and $\dot{y}=0$ at $t=0$.
 
 `@script`
 
-The damped SHO is a standard system, commonly used in physics.
+The forced damped SHO is a standard system, commonly used in physics. 
+
+Since this is a second order ODE, we need two boundary conditions.
 
 In the exercises later, you will use this model to model the response of a seismometer.
 
@@ -164,10 +170,10 @@ $$ \ddot{y} +2 \dot{y} +2y = \cos(2t) $$
 
 with the initial condition $y=0$ and $\dot{y}=0$ at $t=0$.
 
-- Lets start by defining a new vector $ U = ( z0 , z1 ) $ where $z0 =y$ and $z1 =\dot{y}$ 
+- Lets start by defining a new vector $ U = ( z_0 , z_1 ) $ where $z_0 =y$ and $z_1 =\dot{y}$ 
 
 - Next take its derivative,
-  $$\dot{U} =  (\dot{z0} , \dot{z1} )$$
+  $$\dot{U} =  (\dot{z_0} , \dot{z_1} )$$
 
 `@script`
 
@@ -180,13 +186,13 @@ key: 4304b431b0
 ```
 
 `@part1`
- Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z0} , \dot{z1} )$,
+ Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z_0} , \dot{z_1} )$,
 
-- Since $z0 = y$, 
- $$ \dot{ z0 } = \dot{ y } = z1 $$
+- Since $z_0 = y$, 
+ $$ \dot{ z_0 } = \dot{ y } = z_1 $$
  
-- and since $z1=\dot{y}$,
- $$ \dot{ z1 } = \ddot{y} = \cos (2t) - 2 \dot{y} - 2y= \cos (2t) - 2 z1 - 2 z0$$
+- and since $z_1=\dot{y}$,
+ $$ \dot{ z_1 } = \ddot{y} = \cos (2t) - 2 \dot{y} - 2y= \cos (2t) - 2 z_1 - 2 z_0$$
 
 `@script`
 
@@ -199,17 +205,17 @@ key: '20537484e2'
 ```
 
 `@part1`
-Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z0} , \dot{z1} )$,
+Now consider the two terms in the bracket on the RHS of $\dot{U} =  (\dot{z_0} , \dot{z_1} )$,
 
-- Since $z0 = y$, 
- $$ \dot{ z0 } = \dot{ y } = z1 $$
+- Since $z_0 = y$, 
+ $$ \dot{ z_0 } = \dot{ y } = z_1 $$
  
-- and since $z1=\dot{y}$,
- $$ \dot{ z1 } = \ddot{y} = \cos (2t) - 2 \dot{y} - 2y= \cos (2t) - 2 z1 - 2 z0$$
+- and since $z_1=\dot{y}$,
+ $$ \dot{ z_1 } = \ddot{y} = \cos (2t) - 2 \dot{y} - 2y= \cos (2t) - 2 z_1 - 2 z_0$$
 
 - If you look carefully, we now have two coupled 1st order equations:
-$$ \dot{ z0 } = z1 $$
-$$ \dot{ z1 } = \cos (2t) - 2 z1 - 2 z0$$
+$$ \dot{ z_0 } = z_1 $$
+$$ \dot{ z_1 } = \cos (2t) - 2 z_1 - 2 z_0$$
 
 `@script`
 
@@ -226,19 +232,16 @@ key: 5c5f49251c
 - Coupled ODE example: $dy/dt=-x$ and  $dx/dt=y$
 ```
 def derivative(z,t):
-  """ Derivative (dz[0]/dt,dz[1]/dt)=(z[1],\cos (2t) - 2 z1 - 2 z0)"""
-  return ( z[1], -z[0] )
+    return ( z[1], -z[0] )
 ```
 
 `@part2`
 - 2nd order Simple Harmonic Oscillator
-$$ \dot{ z }[0] = z[1] $$
-$$ \dot{ z }[1] = \cos (2t) - 2 z[1] - 2 z[0]$$
-
+$$ \dot{z_0} = z_1 \quad \Longrightarrow \quad \dot{ z }[0] = z[1] $$
+$$ \dot{ z_1 } = \cos (2t) - 2 z_1 - 2 z_0 \quad \Longrightarrow \quad  \dot{ z }[1] = \cos (2t) - 2 z[1] - 2 z[0]$$
 ```
 def dU_dt(z,t):
-  """ Derivative (dz[0]/dt,dz[1]/dt)=(z[1],\cos (2t) - 2 z[1] - 2 z[0])"""
-  return ( z[1], np.cos(2*t)-2*z[1]-2*z[0] )
+    return ( z[1], np.cos(2*t)-2*z[1]-2*z[0] )
 ```
 
 `@script`

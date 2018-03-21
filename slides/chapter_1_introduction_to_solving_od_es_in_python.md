@@ -5,7 +5,7 @@ key: a951026bf01573a11af7f9dbc6cfc369
 video_link: //player.vimeo.com/video/78834424
 
 ---
-## Introduction to solving ODEs in Python
+## Introduction to Solving ODEs in Python
 
 ```yaml
 type: TitleSlide
@@ -51,6 +51,7 @@ key: 5e2281805c
 
 `@part1`
 - In mathematics, an ordinary differential equation (ODE) is a differential equation containing one or more functions of one independent variable and its derivatives. 
+
 - The term ordinary is used in contrast with the term partial differential equation which may be with respect to more than one independent variable.
 
 `@script`
@@ -68,13 +69,13 @@ key: f2eb832c17
 `@part1`
 We need four elements to solve an ode. The first three below are the same information you need to analytically solve an ODE. 
 
-1. The funtion we want to integrate:
+1. **A funtion to be integrated**: We define a function that takes the two variables and returns the derivatives that are a function of those variables.
 
-2. Boundary Conditions: 
+2. **Boundary Conditions**: For a 1st order ODE we only need one boundary condition, so we specify that as a starting point and integrate away from it.
 
-3. Domain to integrate over:
+3. **Domain to integrate over**: The range of space or time to be integrated over.
 
-4. A numerical ODE solver: `scipy.integrate.odeint`
+4. **A numerical ODE solver**: `scipy.integrate.odeint`
 
 
 
@@ -118,7 +119,9 @@ key: 979e3f9b42
 
 `@part1`
 
-How can we solve $\frac{dy}{dt}=t$ using `odeint`?
+Integrate $\frac{dy}{dt}=t$ over the range $t \in [0,10]$ with the initial condition $y(t=0)=0.1$
+
+Below, wel numerically integrate this using `odeint`
 
 ``` 
 # 1. Define the function you want to integrate
@@ -132,17 +135,15 @@ yinit = 0.1
 time  = np.linspace(0,10,100)
 
 # 4. Perform the integration
-y=integrate.odeint(dy_dt, yinit, time)
+y = integrate.odeint(dy_dt, yinit, time)
 
 # 5. Plot the results
-plt.plot(time,y)
-
-plt.xlabel('time')    ;    plt.ylabel('y')
-plt.title(r'Solution for $\frac{dy}{dt}=t$')
+plt.plot(time, y)
 ```
 
 `@script`
 
+For the code to run, we have already imported numpy as np; scipy.integrate as integrate; matplotlib.pyplot as plt
 
 ---
 ## Let's practice!

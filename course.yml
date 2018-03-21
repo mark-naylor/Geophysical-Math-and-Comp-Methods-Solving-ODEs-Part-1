@@ -1,5 +1,5 @@
-title: Numerical solutions to ODEs - Part 1 - Initial Value Problems
-description: A description of the course.
+title: Numerical solutions to ODEs - Part 1
+description: In this course, you will explore the basics of solving ODEs. You will use the `scipy` ODE solvers to solve 1st order ODEs. You will apply these methods to solve coupled ODEs and higher order ODEs where the boundary conditions are specified at a single point in space or time, i.e. initial vaule problems. Finally, we will peek under the lid and see how these solvers actually work.
 programming_language: python
 from: python-base-prod:21
 

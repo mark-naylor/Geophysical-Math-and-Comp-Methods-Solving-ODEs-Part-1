@@ -1,5 +1,5 @@
 ---
-title       : Numerical solution to Coupled ODEs and Higher Order ODEs
+title       : Numerical solution to Coupled ODEs and Higher Order ODEs for Initial Value Problems
 description : In this chapter you will look at how to solve (1) coupled 1st order ODEs and (2) higher order ODEs by reformulating the problem as a set of coupled 1st order ODEs. 
 
 
